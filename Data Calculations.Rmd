@@ -1,0 +1,27 @@
+#Calculation of Resting HR
+```{r}
+GARMINDATA <- read.csv("C:\\Users\\thoma\\OneDrive - Murdoch University\\Desktop\\PhD 2022\\Publications\\AOP Determination\\Data\\GARMIN_DATA.csv")
+```
+
+```{r}
+RESTING_HR <- GARMINDATA%>%
+filter(!INTERVALS %in% "BLANK")%>%
+filter(!INTERVALS %in% "WARM_UP")%>%
+filter(!INTERVALS %in% "EXERCISE")%>%
+
+summarySE(measurevar = "hr", groupvar =c("participant"), na.rm = FALSE, conf.interval = 0.95, .drop = TRUE)
+```
+
+#Calculation of Resting VE
+```{r}
+PARVODATA <- read.csv("C:\\Users\\thoma\\OneDrive - Murdoch University\\Desktop\\PhD 2022\\Publications\\AOP Determination\\Data\\PARVO_DATA.csv")
+```
+
+```{r}
+RESTING_VE <- PARVODATA%>%
+filter(!INTERVALS %in% "BLANK")%>%
+filter(!INTERVALS %in% "WARM_UP")%>%
+filter(!INTERVALS %in% "EXERCISE")%>%
+
+summarySE(measurevar = "VE", groupvar =c("participant"), na.rm = FALSE, conf.interval = 0.95, .drop = TRUE)
+```
