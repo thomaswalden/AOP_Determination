@@ -1,0 +1,5 @@
+#Data Import
+```{r}
+MAIN_DATA <- read.csv("C:\\Users\\thoma\\OneDrive - Murdoch University\\Desktop\\PhD 2022\\Publications\\AOP Determination\\Data\\DEXA Scan Info.csv")
+```
+
