@@ -16,7 +16,7 @@ summarySE(measurevar = "hr", groupvar =c("participant"), na.rm = FALSE, conf.int
 ```{r}
 PARVODATA <- read.csv("C:\\Users\\thoma\\OneDrive - Murdoch University\\Desktop\\PhD 2022\\Publications\\AOP Determination\\Data\\PARVO_DATA.csv")
 ```
-
+#VE
 ```{r}
 RESTING_VE <- PARVODATA%>%
 filter(!INTERVALS %in% "BLANK")%>%
@@ -24,4 +24,13 @@ filter(!INTERVALS %in% "WARM_UP")%>%
 filter(!INTERVALS %in% "EXERCISE")%>%
 
 summarySE(measurevar = "VE", groupvar =c("participant"), na.rm = FALSE, conf.interval = 0.95, .drop = TRUE)
+```
+#RR
+```{r}
+RESTING_RR <- PARVODATA%>%
+filter(!INTERVALS %in% "BLANK")%>%
+filter(!INTERVALS %in% "WARM_UP")%>%
+filter(!INTERVALS %in% "EXERCISE")%>%
+
+summarySE(measurevar = "RR", groupvar =c("participant"), na.rm = FALSE, conf.interval = 0.95, .drop = TRUE)
 ```
